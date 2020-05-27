@@ -23,4 +23,27 @@ Things you may want to cover:
 
 * ...
 
+## tasksテーブル
+|Column|Type|Options|
+|------|----|-------|
+|date|integer|null: false|
+|category|integer|null: false|
+|title|string|null: false|
+|text|string|null: false|
+|finished|integer|null: false|
+
+### Association
+- belongs_to :user
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|bigday|integer|null: false|
+
+### Association
+- has_many :tasks
 
