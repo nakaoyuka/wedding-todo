@@ -1,0 +1,107 @@
+%header
+  .head
+    .headerTop
+      .headerTop__leftTitle
+        The Best day Ever
+      .headerTop__rightTitle
+        todo list
+    .headerBottom
+      %ul.headerBottom__bigday
+        %li.headerBottom__bigday__text
+          The big day
+        %li.headerBottom__bigday__day
+          2020/11/22
+    .headerLogin
+      %ul.headerLogin__singup
+        %li.headerLogin__singup__login
+          ログイン
+        %li.headerLogin__singup__new
+          新規登録
+
+%main
+  .mainTop
+    .mainTops
+      %ul.mainTops__titles
+        %li.mainTops__titles__todo
+          TODO 
+        %li.mainTops__titles__add
+          を追加する
+      .mainTops__line
+
+      .mainTops__input
+      = form_for @task, method: :post do |f| 
+        .mainTops__input__dates
+          .mainTops__input__dates__date
+            .mainTops__input__dates__date__text
+              いつから？
+            = f.date_field :date, class: "taskNew__inputBox"
+          .mainTops__input__dates__finished
+            .mainTops__input__dates__finished__text
+              いつまでに？
+            = f.date_field :finished, class: "taskNew__inputBox"
+        .mainTops__input__titleCat
+          .mainTops__input__titleCat__title
+            .mainTops__input__titleCat__title__text
+              タイトル
+            = f.text_field :title, placeholder: "入力してください (16字以内)",class: "taskNew__inputBox"
+          .mainTops__input__titleCat__category
+            .mainTops__input__titleCat__category__text
+              カテゴリー
+            = f.select :category, Task. categories.keys,{prompt: '選択してください'},class: "taskNew__selectBox"
+        .mainTops__input__text
+          .mainTops__input__text__text
+            内容
+          = f.text_area :text, placeholder: "入力してください",class: "taskNew__inputBox"
+        .mainTops__input__send
+          = f.submit "追加する", class:"taskNew__sellBtn",data: { disable_with: "更新中..." }
+
+    .mainBottom
+      .mainBottom__index
+        .mainBottom__index__title
+          .mainBottom__index__title__todo
+            TODO
+          .mainBottom__index__title__index
+            一覧
+        -# .mainBottom__index__todo
+        -#   .mainBottom__index__todo__date
+        -#   .mainBottom__index__todo__finished
+        -#   .mainBottom__index__todo__title
+        -#   .mainBottom__index__todo__category
+        -#   .mainBottom__index__todo__text
+      .mainBottom__indexs
+        .mainBottom__indexs__todos
+          .mainBottom__indexs__todos__date
+            .mainBottom__indexs__todos__date__text
+              いつから
+            .mainBottom__indexs__todos__date__dates
+              2020/5/23
+              -# = @task.date
+          .mainBottom__indexs__todos__finished
+            .mainBottom__indexs__todos__finished__text
+              いつまでに
+            .mainBottom__indexs__todos__finished__finish
+              2020/6/20
+              -# = @task.finished
+          .mainBottom__indexs__todos__title
+            .mainBottom__indexs__todos__title__text
+              タイトル
+            .mainBottom__indexs__todos__title__titles
+              ゲストリストアップああああ
+              -# = @task.title
+          .mainBottom__indexs__todos__category
+            .mainBottom__indexs__todos__category__text
+              カテゴリー
+            .mainBottom__indexs__todos__category__categories
+              ペーパーアイテム
+              -# = @task.category
+        .mainBottom__indexs__text
+          .mainBottom__indexs__text__exl
+            内容
+          .mainBottom__indexs__text__texts
+            友達にライン送る。親戚はお母さんに確認する！あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          -# = @task.text
+%fooder
+  .foot
+    .foot__text
+      The Best day Ever ・・・
+
