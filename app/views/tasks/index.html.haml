@@ -62,44 +62,34 @@
             TODO
           .mainBottom__index__title__index
             一覧
-        -# .mainBottom__index__todo
-        -#   .mainBottom__index__todo__date
-        -#   .mainBottom__index__todo__finished
-        -#   .mainBottom__index__todo__title
-        -#   .mainBottom__index__todo__category
-        -#   .mainBottom__index__todo__text
       .mainBottom__indexs
         .mainBottom__indexs__todos
-          .mainBottom__indexs__todos__date
-            .mainBottom__indexs__todos__date__text
-              いつから
-            .mainBottom__indexs__todos__date__dates
-              2020/5/23
-              -# = @task.date
-          .mainBottom__indexs__todos__finished
-            .mainBottom__indexs__todos__finished__text
-              いつまでに
-            .mainBottom__indexs__todos__finished__finish
-              2020/6/20
-              -# = @task.finished
-          .mainBottom__indexs__todos__title
-            .mainBottom__indexs__todos__title__text
-              タイトル
-            .mainBottom__indexs__todos__title__titles
-              ゲストリストアップああああ
-              -# = @task.title
-          .mainBottom__indexs__todos__category
-            .mainBottom__indexs__todos__category__text
-              カテゴリー
-            .mainBottom__indexs__todos__category__categories
-              ペーパーアイテム
-              -# = @task.category
-        .mainBottom__indexs__text
-          .mainBottom__indexs__text__exl
-            内容
-          .mainBottom__indexs__text__texts
-            友達にライン送る。親戚はお母さんに確認する！あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-          -# = @task.text
+          - @tasks.each do |task|
+            .mainBottom__indexs__todos__date
+              .mainBottom__indexs__todos__date__text
+                いつから
+              .mainBottom__indexs__todos__date__dates
+                = task.date
+            .mainBottom__indexs__todos__finished
+              .mainBottom__indexs__todos__finished__text
+                いつまでに
+              .mainBottom__indexs__todos__finished__finish
+                = task.finished
+            .mainBottom__indexs__todos__title
+              .mainBottom__indexs__todos__title__text
+                タイトル
+              .mainBottom__indexs__todos__title__titles
+                = task.title
+            .mainBottom__indexs__todos__category
+              .mainBottom__indexs__todos__category__text
+                カテゴリー
+              .mainBottom__indexs__todos__category__categories
+                = task.category
+            .mainBottom__indexs__todos__text
+              .mainBottom__indexs__todos__text__exl
+                内容
+              .mainBottom__indexs__todos__text__texts
+                = task.text
 %fooder
   .foot
     .foot__text

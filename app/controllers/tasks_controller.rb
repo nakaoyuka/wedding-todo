@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   def index
     @task = Task.new
+    # @task = Task.find(params[:id])
     # @tasks = Task.page(params[:page]).per(20)
+    @tasks = Task.all
   end
 
   def create
