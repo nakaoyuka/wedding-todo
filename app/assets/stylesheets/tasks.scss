@@ -42,7 +42,6 @@
       font-family: cursive;
       font-size: 20px;
       display: flex;
-      color: white;
       &__login{
         background-color: pink;
         padding: 5px 15px;
@@ -51,6 +50,10 @@
         background-color: palevioletred;
         padding: 5px 15px;
         margin-left: 20px;
+      }
+      a{
+        text-decoration: none;
+        color: white;
       }
     }
   }

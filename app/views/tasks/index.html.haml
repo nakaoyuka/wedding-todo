@@ -12,12 +12,12 @@
         %li.headerBottom__bigday__day
           2020/11/22
     .headerLogin
-      %ul.headerLogin__singup
-        %li.headerLogin__singup__login
-          ログイン
-        %li.headerLogin__singup__new
-          新規登録
-
+      .headerLogin__singup
+        - if user_signed_in?
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "headerLogin__singup__login"
+        - else
+          = link_to "ログイン", new_user_session_path, class: "headerLogin__singup__login"
+          = link_to "新規登録", new_user_registration_path, class: "headerLogin__singup__new" 
 %main
   .mainTop
     .mainTops
