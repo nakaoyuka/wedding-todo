@@ -42,7 +42,6 @@
       font-family: cursive;
       font-size: 20px;
       display: flex;
-      color: white;
       &__login{
         background-color: pink;
         padding: 5px 15px;
@@ -51,6 +50,10 @@
         background-color: palevioletred;
         padding: 5px 15px;
         margin-left: 20px;
+      }
+      a{
+        text-decoration: none;
+        color: white;
       }
     }
   }
@@ -179,6 +182,8 @@
       display: flex;
       justify-content: center;
       font-size: 17px;
+      height: 200px;
+      position: relative;
       &__date,
       &__finished,
       &__title,
@@ -215,13 +220,14 @@
         line-height: 40px;
         padding: 5px 15px;
       }
-    }
     &__text{
-      width: 80%;
+      width: 85%;
       text-align: center;
       font-family: 'Amatic SC', cursive;
       margin: auto;
       text-align: left;
+      position: absolute;
+      bottom: 0;
       &__exl{
         font-size: 17px;
       }
@@ -232,6 +238,7 @@
         margin-bottom: 30px;
       }
     }
+  }
   }
 }
 .foot{

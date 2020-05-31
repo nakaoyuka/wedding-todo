@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     @task = Task.new
-    # @tasks = Task.page(params[:page]).per(20)
+    @tasks = Task.all
   end
 
   def create
@@ -13,5 +13,6 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:date, :category, :title, :text, :finished)
+    .merge(user_id: current_user.id)
   end
 end
