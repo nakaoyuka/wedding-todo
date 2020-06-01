@@ -34,11 +34,11 @@
             .mainTops__input__dates__date
               .mainTops__input__dates__date__text
                 いつから？
-              = f.date_select :date, class: "taskNew__inputBox"
+              = f.date_field :date, class: "taskNew__inputBox"
             .mainTops__input__dates__finished
               .mainTops__input__dates__finished__text
                 いつまでに？
-              = f.date_select :finished, class: "taskNew__inputBox"
+              = f.date_field :finished, class: "taskNew__inputBox"
           .mainTops__input__titleCat
             .mainTops__input__titleCat__title
               .mainTops__input__titleCat__title__text

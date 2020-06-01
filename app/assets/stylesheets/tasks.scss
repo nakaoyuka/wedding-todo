@@ -182,8 +182,9 @@
       display: flex;
       justify-content: center;
       font-size: 17px;
-      height: 200px;
+      height: 230px;
       position: relative;
+      border-bottom:solid 1px #FFE4E1;
       &__date,
       &__finished,
       &__title,
